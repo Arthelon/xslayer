@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 const path = require("path")
 const os = require("os")
-const fs = require("fs")
+const fs = require("fs-extra")
 const basePath = path.join(os.homedir(), "Library", "Application Support", "Google", "Chrome")
 
 const printUsage = () => {
@@ -13,7 +13,7 @@ const printUsage = () => {
 }
 
 const removeAppFolder = (id) => {
-    fs.rmdir(path.join(basePath, "Default", "Extensions", id), err => {
+    fs.remove(path.join(basePath, "Default", "Extensions", id), err => {
         if (err && err.code == "ENOENT") {
             console.log("Extension folder not found, did you input the correct extension id?")
         } else if (err) {

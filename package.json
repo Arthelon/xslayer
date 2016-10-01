@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "xslayer": "xslayer.js"
+    "xslayer": "bin/xslayer.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +14,7 @@
   "devDependencies": {
     "eslint": "^3.7.0"
   },
-  "bin": {
-    "xslayer": "bin/xslayer.js"
+  "dependencies": {
+    "fs-extra": "^0.30.0"
   }
 }
