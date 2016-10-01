@@ -14,7 +14,9 @@ const printUsage = () => {
 
 const removeAppFolder = (id) => {
     fs.rmdir(path.join(basePath, "Default", "Extensions", id), err => {
-        if (err) {
+        if (err && err.code == "ENOENT") {
+            console.log("Extension folder not found, did you input the correct extension id?")
+        } else if (err) {
             console.log("Error while removing app folder")
         }
     })
