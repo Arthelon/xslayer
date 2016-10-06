@@ -44,7 +44,7 @@ const removeMetaData = (id) => {
 }
 
 const id = process.argv[2]
-if (!id.length) {
+if (!id || !id.length) {
     printUsage()
 } else {
     removeAppFolder(id)
